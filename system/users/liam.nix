@@ -19,6 +19,9 @@
       crawl brogue
     ];
 
+    programs.gh = {
+      enable = true;
+    };
     programs.vim = {
       enable = true;
       plugins = with pkgs.vimPlugins; [

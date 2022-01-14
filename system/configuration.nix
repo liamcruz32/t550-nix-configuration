@@ -7,7 +7,7 @@
     [ 
       ./hardware-configuration.nix
       ./systempackages.nix
-      <home-manager/nixos>
+      #<home-manager/nixos>
      
       # WM Nixfiles
       ##############
@@ -19,6 +19,11 @@
       ./users/liam.nix
 
     ];
+
+  nix.package = pkgs.nixFlakes;
+  nix.extraOptions = ''
+    experimental-features = nix-command flakes
+  '';
 
   # Boot settings
   #################

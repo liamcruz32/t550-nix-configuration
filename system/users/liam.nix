@@ -11,6 +11,7 @@
     steam.enable = true;
     };
 
+  home-manager.useGlobalPkgs = true;
   home-manager.users.liam = {pkgs, ...}: {
     nixpkgs.config.allowUnfree = true;
     home.packages = with pkgs; [

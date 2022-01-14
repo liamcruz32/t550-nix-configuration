@@ -1,2 +1,4 @@
 #!/bin/sh
-sudo nix-channel --update
+pushd ~/.dotfiles
+sudo nix flake update
+popd

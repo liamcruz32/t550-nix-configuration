@@ -62,9 +62,8 @@
     programs.bash = {
       enable=true;
       shellAliases = {
-        rebuild = "sudo nixos-rebuild switch";
-        upgrade = "sudo nixos-rebuild switch --upgrade";
-        update = "sudo nix-channel --update";
+        rebuild = "bash ~/.dotfiles/apply_system";
+        upgrade = "bash ~/.dotfiles/update_system";
         ls="ls -CF --color";
         la="ls -A --color";
         ll="ls -lha --color";

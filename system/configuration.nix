@@ -16,7 +16,7 @@
 
       # User Accounts
       ################
-      ./users/liam.nix
+      ./users/admin.nix
 
     ];
 
@@ -86,7 +86,7 @@
     noto-fonts-cjk
     noto-fonts-emoji
     liberation_ttf
-    nerdfonts
+    (nerdfonts.override { fonts = [ "Mononoki" "DroidSansMono" ]; })
   ];
 
 

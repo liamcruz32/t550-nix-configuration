@@ -1,9 +1,9 @@
 {config, pkgs, ...}:
 {
-  users.users.admin = {
+  users.users.liam = {
     isNormalUser = true;
-    home = "/home/admin";
-    extraGroups = ["wheel" "networkmanager"];
+    home = "/home/liam";
+    extraGroups = ["networkmanager"];
   };
   
   
@@ -12,7 +12,7 @@
     };
 
   home-manager.useGlobalPkgs = true;
-  home-manager.users.admin = {pkgs, ...}: {
+  home-manager.users.liam = {pkgs, ...}: {
     nixpkgs.config.allowUnfree = true;
     home.packages = with pkgs; [
       firefox inkscape libreoffice-fresh

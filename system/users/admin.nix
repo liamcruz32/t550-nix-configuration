@@ -6,18 +6,12 @@
     extraGroups = ["wheel" "networkmanager"];
   };
   
-  
-  programs = {
-    steam.enable = true;
-    };
-
   home-manager.useGlobalPkgs = true;
   home-manager.users.admin = {pkgs, ...}: {
     nixpkgs.config.allowUnfree = true;
     home.packages = with pkgs; [
-      firefox inkscape libreoffice-fresh
-      transmission-gtk zoom-us audacity
-      crawl brogue
+      firefox
+      crawl
     ];
 
     programs.gh = {

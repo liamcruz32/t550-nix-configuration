@@ -62,8 +62,8 @@
     programs.bash = {
       enable=true;
       shellAliases = {
-        rebuild = "bash ~/.dotfiles/apply_system";
-        upgrade = "bash ~/.dotfiles/update_system";
+        rebuild = "bash ~/.dotfiles/apply_system.sh";
+        upgrade = "bash ~/.dotfiles/update_system.sh";
         ls="ls -CF --color";
         la="ls -A --color";
         ll="ls -lha --color";

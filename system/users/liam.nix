@@ -155,7 +155,7 @@
       !
       ! ! black
       *color0: #111111
-      *color8: #000000
+      *color8: #444444
       ! ! red
       *color1:#A54242
       *color9: #CC6666

@@ -17,7 +17,7 @@
     home.packages = with pkgs; [
       firefox inkscape libreoffice-fresh
       transmission-gtk zoom-us audacity
-      crawl brogue
+      crawl brogue ctags
     ];
 
     programs.gh = {
@@ -27,11 +27,12 @@
       enable = true;
       plugins = with pkgs.vimPlugins; [
         nerdtree
-        pear-tree
         syntastic
+        taglist-vim
         lightline-vim
+        auto-pairs
+        vim-commentary
         vim-fugitive
-        vim-sensible
         vim-nix
         fzf-vim
       ];
@@ -43,17 +44,27 @@
         relativenumber = true;
       };
       extraConfig = ''
+        let mapleader = " "
         set smarttab
         set tabstop=4
         set softtabstop=4
         set noeb vb t_vb=
         au GUIEnter * set vb t_vb
 
-        nnoremap s :Lines<CR>
-        nnoremap ff :NERDTree<CR>
+        nnoremap ss :Lines<CR>
+        nnoremap ff :NERDTreeToggle<CR>
+        nnoremap pp :TlistToggle<CR>
 
         set foldmethod=indent
         set foldlevel=99
+
+        nnoremap <C-J> <C-W><C-J>
+        nnoremap <C-K> <C-W><C-K>
+        nnoremap <C-L> <C-W><C-L>
+        nnoremap <C-H> <C-W><C-H>
+
+        set splitbelow
+        set splitright
 
         let g:lightline = {
             \ 'colorscheme': 'apprentice',
@@ -63,8 +74,6 @@
     programs.bash = {
       enable=true;
       shellAliases = {
-        rebuild = "bash ~/.dotfiles/apply_system.sh";
-        upgrade = "bash ~/.dotfiles/update_system.sh";
         ls="ls -CF --color";
         la="ls -A --color";
         ll="ls -lha --color";
@@ -142,7 +151,7 @@
     };
     programs.urxvt = {
       enable = true;
-      fonts = ["xft:mononoki Nerd Font Mono:style=Regular:size=12"];
+      fonts = ["xft:mononoki Nerd Font Mono:style=Regular:size=11"];
       scroll.bar.enable = false;
       extraConfig = {
         internalBorder = 5;

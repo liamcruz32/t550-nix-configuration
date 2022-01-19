@@ -45,6 +45,9 @@
         set noeb vb t_vb=
         au GUIEnter * set vb t_vb
 
+        autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+        autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+
         nnoremap s :Lines<CR>
         nnoremap ff :NERDTreeToggle<CR>
         nnoremap pp :TlistToggle<CR>
